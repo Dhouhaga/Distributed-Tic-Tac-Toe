@@ -53,10 +53,12 @@ java -cp bin -Djava.rmi.server.codebase=file:bin/ security.MySecurityManager cli
 
 ### 4. Game Flow
   1. Clients connect via GUI
-  2. Server matches players into sessions
-  3. Players take turns making moves
-  4. Win/draw triggers rematch prompt
-  5. Players can quit anytime
+     ![Screenshot 2025-05-30 111544](https://github.com/user-attachments/assets/f86fd7da-cbdd-4977-b950-f6a697554ee4)
+
+  3. Server matches players into sessions
+  4. Players take turns making moves
+  5. Win/draw triggers rematch prompt
+  6. Players can quit anytime
 
 ## Configuration Options
 | Parameter        	 | Location              | Description                          |
