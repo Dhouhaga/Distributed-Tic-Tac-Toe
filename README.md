@@ -51,14 +51,62 @@ java -cp bin -Djava.rmi.server.codebase=file:bin/ security.MySecurityManager cli
 > [!NOTE]  
 >Run on player machines, enter server IP when prompted
 
-### 4. Game Flow
-  1. Clients connect via GUI
-     ![Screenshot 2025-05-30 111544](https://github.com/user-attachments/assets/f86fd7da-cbdd-4977-b950-f6a697554ee4)
+## Game Flow
 
-  3. Server matches players into sessions
-  4. Players take turns making moves
-  5. Win/draw triggers rematch prompt
-  6. Players can quit anytime
+### 1. Client Connection
+Players connect via the GUI by entering server details:
+- Server IP (e.g., `localhost` for local testing)
+- Client IP (auto-detected or manually entered)
+
+![Screenshot 2025-05-30 111544](https://github.com/user-attachments/assets/891e3701-ef60-4f2b-b09a-42c3ba988c4f)
+<br>
+**Error Handling:**
+- Invalid IP formats trigger validation warnings
+- Unreachable servers show connection timeout messages
+- Duplicate player names are rejected
+
+### 2. Session Matching
+- Server automatically pairs available players
+- New game sessions are created on-demand
+- Players see "Waiting for opponent" status until matched
+
+### 3. Gameplay Loop
+Players take turns making moves on the board:
+![Screenshot 2025-04-26 151818](https://github.com/user-attachments/assets/63e97e7a-7ac8-40d2-9b9f-e52a53f6d56d)
+<br>
+
+**Features:**
+- Turn indication ("YOUR TURN" vs "Opponent's turn")
+- Visual board updates after each move
+- Real-time move validation (prevents invalid placements)
+
+### 4. Win/Draw Detection
+Game automatically detects end conditions:
+- Win: 3-in-a-row patterns
+- Draw: Full board with no winner
+
+**Error Recovery:**
+- Network drops trigger automatic reconnection attempts
+- Missing heartbeats mark players as "disconnected"
+- Session timeouts after 30 seconds of inactivity
+
+### 5. Rematch System
+After game completion:
+- Both players get rematch prompts
+- New game starts if both choose "Play Again"
+- Session dissolves if either player quits
+
+### 6. Graceful Exit
+Players can quit anytime via:
+- "Quit Game" button during gameplay
+- Window close (X) button (NOT ON WINDOWS)
+- Console interrupt (Ctrl+C) for CLI clients
+
+**Termination Sequence:**
+1. Client sends disconnect notification
+2. Server frees game resources
+3. Opponent receives "Player left" notification
+4. Session automatically closes after 60 seconds
 
 ## Configuration Options
 | Parameter        	 | Location              | Description                          |
@@ -80,16 +128,3 @@ java -cp bin -Djava.rmi.server.codebase=file:bin/ security.MySecurityManager cli
 - Session Limits: Increase MAX_SESSIONS if needed
 - Timeout Errors: Adjust sun.rmi.transport.* properties
 
-## Security Notes
-The MySecurityManager class:
-  - Overrides default RMI security policies
-  - Allows network connections without policy files
-  - Should be replaced with proper security policies in production
-    
-```bash
-java
-// security/MySecurityManager.java
-public void checkConnect(String host, int port) {
-    // Allow all connections (development only)
-}
-```
