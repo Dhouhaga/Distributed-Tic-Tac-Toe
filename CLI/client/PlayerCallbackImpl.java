@@ -17,7 +17,7 @@ public class PlayerCallbackImpl implements PlayerCallback {
         this.client = client;
         this.clientIP = clientIP;
         System.setProperty("java.rmi.server.hostname", clientIP); 
-        PlayerCallback stub = (PlayerCallback) UnicastRemoteObject.exportObject(this, 5002); // Using 0 for random port
+        PlayerCallback stub = (PlayerCallback) UnicastRemoteObject.exportObject(this, 5002); 
         
         startHeartbeatChecker();
     }
@@ -31,7 +31,7 @@ public class PlayerCallbackImpl implements PlayerCallback {
                     // Test server connection using the getter
                     TicTacToeService service = client.getGameService();
                     if (service != null) {
-                        service.ping(); // This method needs to exist in your TicTacToeService interface
+                        service.ping(); 
                     }
                 } catch (RemoteException e) {
                     serverAlive.set(false);
