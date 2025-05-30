@@ -1,4 +1,3 @@
-// In common/PlayerCallback.java
 package common;
 
 import java.rmi.Remote;
