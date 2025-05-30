@@ -63,7 +63,7 @@ Players connect via the GUI by entering server details:
 <br>
 **Error Handling:**
 - Unreachable servers show connection timeout messages
-  <br>
+<br>
   ![serverdown](https://github.com/user-attachments/assets/eebbf300-a569-443d-86da-334d59c206c9)
 <br>
 
