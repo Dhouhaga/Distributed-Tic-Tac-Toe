@@ -95,7 +95,7 @@ Game automatically detects end conditions:
      <td>Game Over</td>
   </tr>
   <tr>
-    <td>![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1)</td>
+    <td><img ![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1)> </td>
     <td>![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1)</td>
   </tr>
  </table>
