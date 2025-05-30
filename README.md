@@ -61,8 +61,10 @@ Players connect via the GUI by entering server details:
 ![Screenshot 2025-05-30 111544](https://github.com/user-attachments/assets/891e3701-ef60-4f2b-b09a-42c3ba988c4f)
 <br>
 **Error Handling:**
-- Invalid IP formats trigger validation warnings
 - Unreachable servers show connection timeout messages
+  ![serverdown](https://github.com/user-attachments/assets/eebbf300-a569-443d-86da-334d59c206c9)
+<br>
+- Invalid IP formats trigger validation warnings
 - Duplicate player names are rejected
 
 ### 2. Session Matching
@@ -84,7 +86,17 @@ Players take turns making moves on the board:
 Game automatically detects end conditions:
 - Win: 3-in-a-row patterns
 - Draw: Full board with no winner
+<table>
+  <tr>
+    <td>Game Board</td>
+     <td>Game Over</td>
+  </tr>
+  <tr>
+    <td><img ![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1)
+ width=270 height=480></td>
 
+  </tr>
+ </table>
 **Error Recovery:**
 - Network drops trigger automatic reconnection attempts
 - Missing heartbeats mark players as "disconnected"
