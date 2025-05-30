@@ -60,9 +60,11 @@ Players connect via the GUI by entering server details:
 
 ![Screenshot 2025-05-30 111544](https://github.com/user-attachments/assets/891e3701-ef60-4f2b-b09a-42c3ba988c4f)
 <br>
+<br>
 **Error Handling:**
 - Unreachable servers show connection timeout messages
   ![serverdown](https://github.com/user-attachments/assets/eebbf300-a569-443d-86da-334d59c206c9)
+<br>
 <br>
 - Invalid IP formats trigger validation warnings
 - Duplicate player names are rejected
@@ -76,7 +78,7 @@ Players connect via the GUI by entering server details:
 Players take turns making moves on the board:
 ![Screenshot 2025-04-26 151818](https://github.com/user-attachments/assets/63e97e7a-7ac8-40d2-9b9f-e52a53f6d56d)
 <br>
-
+<br>
 **Features:**
 - Turn indication ("YOUR TURN" vs "Opponent's turn")
 - Visual board updates after each move
