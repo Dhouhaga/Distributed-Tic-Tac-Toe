@@ -4,12 +4,12 @@ This project implements a distributed Tic Tac Toe game using Java RMI (Remote Me
 
 ## Features
 
-- Distributed Architecture: Server handles game logic, clients manage UI
-- Dynamic Session Management: Auto-scales game sessions as players connect
-- Rematch System: Players can restart games after completion
-- Heartbeat Monitoring: Detects disconnected players automatically
-- Modern GUI: Clean interface with game board, status updates, and controls
-- Connection Security: Custom security manager for RMI communication
+- **Distributed Architecture:** Server handles game logic, clients manage UI
+- **Dynamic Session Management:** Auto-scales game sessions as players connect
+- **Rematch System:** Players can restart games after completion
+- **Heartbeat Monitoring:** Detects disconnected players automatically
+- **Modern GUI:** Clean interface with game board, status updates, and controls
+- **Connection Security:** Custom security manager for RMI communication
 
 ## Project Structure
 
@@ -52,11 +52,11 @@ java -cp bin -Djava.rmi.server.codebase=file:bin/ security.MySecurityManager cli
 >Run on player machines, enter server IP when prompted
 
 ### 4. Game Flow
-- Clients connect via GUI
-- Server matches players into sessions
-- Players take turns making moves
-- Win/draw triggers rematch prompt
-- Players can quit anytime
+  1. Clients connect via GUI
+  2. Server matches players into sessions
+  3. Players take turns making moves
+  4. Win/draw triggers rematch prompt
+  5. Players can quit anytime
 
 ## Configuration Options
 | Parameter        	 | Location              | Description                          |
