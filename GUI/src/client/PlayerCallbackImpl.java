@@ -18,8 +18,7 @@ public class PlayerCallbackImpl implements PlayerCallback {
         this.client = client;
         this.clientIP = clientIP;
         System.setProperty("java.rmi.server.hostname", clientIP);
-        
-        // Port assignment logic remains the same
+
         int port = 5002;
         PlayerCallback stub = null;
 
@@ -84,19 +83,6 @@ public void displayMessage(String message) throws RemoteException {
     }
 }
 
-/*
-@Override
-public void displayMessage(String message) throws RemoteException {
-    if (message.contains("SESSION_END|")) {
-        String content = message.substring(message.indexOf("SESSION_END|") + "SESSION_END|".length());
-        client.gui.showTimedErrorMessage("Opponent left: " + content + " Closing in 5 seconds...", 5000);
-    } else if (message.contains("declined rematch")) {
-        client.gui.showTimedErrorMessage("Opponent declined to play again. Closing in 5 seconds...", 5000);
-    } else {
-        client.displayMessage(message);
-    }
-}
-*/
     @Override
     public void updateBoard(char[][] board) throws RemoteException {
         client.gui.updateBoard(board);
@@ -118,6 +104,6 @@ public void notifyTurn() throws RemoteException {
 
 @Override
 public void gameOver(String message) throws RemoteException {
-    client.gui.gameOver(message); // Already handles GUI updates
+    client.gui.gameOver(message); 
 }
 }
