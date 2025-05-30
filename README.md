@@ -2,6 +2,9 @@
 
 This project implements a distributed Tic Tac Toe game using Java RMI (Remote Method Invocation). Players can connect to a central server, join game sessions, and play against opponents in real-time with automatic matchmaking.
 
+### CLI Version (Optional)
+A command-line interface is available in `/cli` for testing purposes. The GUI version is recommended for end-users.
+
 ## Features
 
 - **Distributed Architecture:** Server handles game logic, clients manage UI
