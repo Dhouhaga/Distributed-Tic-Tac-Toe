@@ -11,7 +11,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
-// Add these imports at the top if not already present
 import java.util.concurrent.atomic.AtomicReference;
 
 public class TicTacToeServiceImpl extends UnicastRemoteObject implements TicTacToeService {
@@ -26,7 +25,7 @@ public class TicTacToeServiceImpl extends UnicastRemoteObject implements TicTacT
     private final Object gameLock = new Object();
 
     public TicTacToeServiceImpl(int port) throws RemoteException {
-        super(port); // Now using a fixed port
+        super(port); 
         this.players = new ConcurrentHashMap<>();
         this.playAgainResponses = new ConcurrentHashMap<>();
         this.random = new Random();
@@ -39,7 +38,6 @@ public class TicTacToeServiceImpl extends UnicastRemoteObject implements TicTacT
         return TicTacToeServer.connectToAvailableSession();
     }
 
-    // Add these methods to the class
     public void setCleanupCallback(Runnable callback) {
         this.cleanupCallback.set(callback);
     }
@@ -230,8 +228,6 @@ public class TicTacToeServiceImpl extends UnicastRemoteObject implements TicTacT
             return true;
         }
     }
-
-    // -------------------------------------------------------------------------------
 
 @Override
 public void quitGame(int playerId) throws RemoteException {
