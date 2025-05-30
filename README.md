@@ -88,7 +88,8 @@ Players take turns making moves on the board:
 ### 4. Win/Draw Detection
 Game automatically detects end conditions:
 - Win: 3-in-a-row patterns
-- Draw: Full board with no winner
+- Draw: Full board with no winner<br>
+
 ![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1) ![draw2](https://github.com/user-attachments/assets/f78ba896-845f-4e8e-9398-fd26d7477ec2)
 
 <br>
