@@ -26,7 +26,6 @@ public class TicTacToeClient {
         System.setProperty("sun.rmi.transport.tcp.handshakeTimeout", "30000");
     }
     
-    // Add this to the TicTacToeClient class
 public void setGameService(TicTacToeService gameService) {
     this.gameService = gameService;
 }
@@ -79,7 +78,7 @@ public void start() throws RemoteException {
             String input = scanner.nextLine().trim();
 
             if (input.equalsIgnoreCase("quit")) {
-                quit(); // Use the proper quit method
+                quit(); 
                 return;
             }
 
@@ -154,7 +153,7 @@ public void start() throws RemoteException {
     if (message.startsWith("GAME_OVER|")) {
         String content = message.substring("GAME_OVER|".length());
         if (content.startsWith("SESSION_END|")) {
-            // This will now show the timed message
+            // Show the timed message
             gui.showErrorMessage("Opponent left: " + content.substring("SESSION_END|".length()) + 
                                " Closing in 5 seconds...");
             new Thread(() -> {
