@@ -65,7 +65,7 @@ Players connect via the GUI by entering server details:
 - Unreachable servers show connection timeout messages
   ![serverdown](https://github.com/user-attachments/assets/eebbf300-a569-443d-86da-334d59c206c9)
 <br>
-<br>
+
 - Invalid IP formats trigger validation warnings
 - Duplicate player names are rejected
 
