@@ -39,7 +39,7 @@ public class TicTacToeClient {
         try {
             registry = LocateRegistry.getRegistry(serverIP, 1099);
             // Test if registry is actually available
-            registry.list(); // This will throw RemoteException if unreachable
+            registry.list(); // Throw RemoteException if unreachable
         } catch (RemoteException e) {
             System.err.println("\nError: Could not connect to server (server unreachable)");
             System.exit(1);
@@ -104,7 +104,7 @@ public class TicTacToeClient {
             String input = scanner.nextLine().trim();
 
             if (input.equalsIgnoreCase("quit")) {
-                quit(); // Use the proper quit method
+                quit(); 
                 return;
             }
 
