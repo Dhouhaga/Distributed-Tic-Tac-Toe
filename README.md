@@ -89,16 +89,9 @@ Players take turns making moves on the board:
 Game automatically detects end conditions:
 - Win: 3-in-a-row patterns
 - Draw: Full board with no winner
-<table>
-  <tr>
-    <td>Game Board</td>
-     <td>Game Over</td>
-  </tr>
-  <tr>
-    <td><img ![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1)> </td>
-    <td>![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1)</td>
-  </tr>
- </table>
+![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1) ![draw](https://github.com/user-attachments/assets/fef778a8-b9f8-4e7c-9072-848d675a89c1)
+<br>
+
 **Error Recovery:**
 - Network drops trigger automatic reconnection attempts
 - Missing heartbeats mark players as "disconnected"
