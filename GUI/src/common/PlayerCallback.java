@@ -8,5 +8,5 @@ public interface PlayerCallback extends Remote {
     void notifyTurn() throws RemoteException;
     void gameOver(String message) throws RemoteException;
     void displayMessage(String message) throws RemoteException;
-    void notifyNewGame() throws RemoteException; // Add this new method
+    void notifyNewGame() throws RemoteException; 
 }
